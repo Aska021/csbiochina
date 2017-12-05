@@ -14,11 +14,17 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { aboutusComponent } from './aboutus/aboutus.coponent';
 import { homeComponent } from './home/home.component';
 import { peptidesComponent } from './peptides/peptides.component';
-import { synthesizerComponent } from './synthesizer/synthesizer.component';
+import { SynthesizerModule } from './synthesizer/synthesizer.module';
+
+
+
+
+
 
 
 @NgModule({
   imports: [
+    SynthesizerModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
@@ -36,10 +42,6 @@ import { synthesizerComponent } from './synthesizer/synthesizer.component';
         component: peptidesComponent
       },
       {
-        path: 'synthesizer',
-        component: synthesizerComponent
-      },
-      {
         path: 'todoList',
         component: TodoListComponent
       },
@@ -52,7 +54,8 @@ import { synthesizerComponent } from './synthesizer/synthesizer.component';
         path: '**',
         component: PageNotFoundComponent
       }
-    ])
+    ],
+    )
   ],
   declarations: [
     AppComponent,
@@ -62,7 +65,6 @@ import { synthesizerComponent } from './synthesizer/synthesizer.component';
     aboutusComponent,
     homeComponent,
     peptidesComponent,
-    synthesizerComponent
   ],
   bootstrap: [
     AppComponent
